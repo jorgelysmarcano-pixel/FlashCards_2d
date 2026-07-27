@@ -14,6 +14,8 @@ body {
     background-color: var(--card-front-color);
     text-align: center;
     height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 300ms ease-in-out;
   }
 
   #container {
@@ -38,6 +40,7 @@ body {
     margin: 0.6rem;
     border-radius: 0.6rem;
     font-size: 1vw;
+    backface-visibility: hidden;
   }
   .cartao__conteudo__pergunta p {
     color: var(--text-color);
@@ -47,6 +50,22 @@ body {
     color: var(--card-back-color);
     font-weight: 700;
   }
+  .cartao__conteudo__pergunta .cartao__conteudo__resposta {
+    position: absolute;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    backface-visibility: hidden;
+  }
+  .cartao__conteudo__pergunta,.cartao__conteudo__resposta{
+    backface-visibility: hidden;
+  }
+  .cartao:hover .cartao__conteudo{
+    transform:rotatey(180deg)
+  }
+   .cartao__conteudo__resposta{
+    transform: rotatey(180deg)
+  }
+
   footer {
     background-color: black;
     color: white;
